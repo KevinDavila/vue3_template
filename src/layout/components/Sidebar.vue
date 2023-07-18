@@ -58,16 +58,14 @@ import { defineComponent, ref } from 'vue'
 import { useRouter } from 'vue-router'
 const valueList = ref()
 const router = useRouter()
-  const items = [
+const items = [
     { title: 'Log Out', icon:'mdi-logout-variant', value:"logout"},
-    { title: 'Click Me' },
-    { title: 'Click Me' },
-    { title: 'Click Me 2' },
-  ]
-  const handleClick = (value)=>{
+    ]
+const handleClick = (value)=>{
     if(value == 'logout'){
         localStorage.setItem('userLoggedIn', 'false')
         router.push('/')
     }
-    console.log(value)}
+    console.log(value)
+    }
 </script>
