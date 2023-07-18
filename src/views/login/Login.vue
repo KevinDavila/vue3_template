@@ -40,6 +40,7 @@ export default defineComponent({
 
     const login = () => {
       console.log(username.value)
+      localStorage.setItem("userLoggedIn", "true")
       // Aquí puedes implementar la lógica de autenticación
       // Comprueba si las credenciales son válidas y guarda el estado de autenticación
       console.log(router)
