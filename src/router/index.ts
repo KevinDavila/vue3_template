@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 
 import Login from '@/views/login/Login.vue'
-import Dashboard from '@/views/dashboard/Dashboard.vue'
 import Cyberpuerta from '@/views/Cyberpuerta.vue'
 import Layout from '@/layout/index.vue'
 // Función de verificación de autenticación
@@ -50,7 +49,7 @@ const router = createRouter({
   history: createWebHistory(),
   routes
 })
-router.beforeEach((to, from, next) => {
+router.beforeEach((to, _from, next) => {
   if (to.meta.requiresAuth && !isAuthenticated()) {
     next('/') // Redirige al inicio de sesión si no está autenticado
   } else {

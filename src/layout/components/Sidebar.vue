@@ -54,14 +54,12 @@
     </v-layout>
 </template>
 <script setup lang="ts">
-import { defineComponent, ref } from 'vue'
 import { useRouter } from 'vue-router'
-const valueList = ref()
 const router = useRouter()
 const items = [
     { title: 'Log Out', icon:'mdi-logout-variant', value:"logout"},
     ]
-const handleClick = (value)=>{
+const handleClick = (value: string)=>{
     if(value == 'logout'){
         localStorage.setItem('userLoggedIn', 'false')
         router.push('/')
