@@ -19,11 +19,14 @@
             <v-divider></v-divider>
 
             <v-list density="compact" nav>
-            <router-link to="/">
+<!--             <router-link to="/">
                 <v-list-item prepend-icon="mdi-account-multiple" title="Home" value="Home" link href="/"></v-list-item>
-            </router-link>
+            </router-link> -->
             <router-link to="/cyberpuerta">
                 <v-list-item prepend-icon="mdi-folder" title="Cyberpuerta" value="Cyberpuerta" link></v-list-item>
+            </router-link>
+            <router-link to="/users">
+                <v-list-item prepend-icon="mdi-account-multiple" title="eshop accounts" value="User" link></v-list-item>
             </router-link>
             <v-list-item prepend-icon="mdi-star" title="Starred" value="starred"></v-list-item>
    

@@ -2,6 +2,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 
 import Login from '@/views/login/Login.vue'
 import Cyberpuerta from '@/views/Cyberpuerta.vue'
+import Users from '@/views/users/Users.vue'
 import Layout from '@/layout/index.vue'
 // Función de verificación de autenticación
 const isAuthenticated = () => {
@@ -37,6 +38,12 @@ const routes: Array<RouteRecordRaw> = [
         path: '/cyberpuerta',
         name: 'Cyberpuerta',
         component: Cyberpuerta,
+        // Ruta protegida, requiere autenticación
+      },
+      {
+        path: '/users',
+        name: 'Users',
+        component: Users,
         // Ruta protegida, requiere autenticación
       }
     ],
