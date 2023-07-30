@@ -14,30 +14,25 @@
     import axios from 'axios';
     export default defineComponent({
         setup(){
-            let response = ref('')
             let eshopName = ref('')
             let userName = ref({
                 name: eshopName
             })
+            let response = ref({})
             const headers = {
-          // Tus encabezados aquí, por ejemplo:
-            Authorization: 'Bearer '+import.meta.env.VITE_API_KEY,
-            'Content-Type': 'application/json',
+                Authorization: 'Bearer '+import.meta.env.VITE_API_KEY,
+                'Content-Type': 'application/json',
             };
             const  getProduct = async () => {
-            try{
-                console.log(userName.value)
-                const res =  await axios.post(import.meta.env.VITE_API_URL+'RSdk2GDxa7/user/getUsers',userName.value, {headers})
-            console.log(res)
-            response.value = res.data
-            
-            }catch(e){
-                let error = e
-                console.log(e)
-                response.value = 'Request failed with status code '+error.response.status+' : '+error.response.statusText  
-            }              
-        }
-        
+                try{
+                    const res =  await axios.post(import.meta.env.VITE_API_URL+import.meta.env.VITE_ESHOPNAME+'/user/getUsers',userName.value, {headers})
+                    response.value = res.data            
+                }catch(e: any){              
+                    console.log(e)
+                    response.value = 'Request failed with status code '+e.response.status+' : '+e.response.statusText  
+                }                 
+            }
+
             return{
                 response,
                 eshopName,
